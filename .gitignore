@@ -1,0 +1,15 @@
+# Compiled Java class files
+*.class
+
+# Environment variables (API Keys)
+.env
+
+# Local user stats and data
+aha_tamatar_stats.txt
+
+# Temporary/IDE files
+.vscode/
+.idea/
+*.log
+bin/
+out/
