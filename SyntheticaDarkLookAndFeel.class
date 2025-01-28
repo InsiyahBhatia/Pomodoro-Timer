@@ -1,0 +1,22 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package de.javasoft.synthetica.dark;
+
+import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
+import java.text.ParseException;
+
+public class SyntheticaDarkLookAndFeel extends SyntheticaLookAndFeel {
+   public SyntheticaDarkLookAndFeel() throws ParseException {
+      super("xml/synth.xml");
+      if (this.getSyntheticaVersion().getMajor() < 3) {
+         throw new RuntimeException("Version conflict - Synthetica V3 is required to run '" + this.getName() + "' " + this.getVersion());
+      }
+   }
+
+   public String getID() {
+      return "SyntheticaDarkLookAndFeel";
+   }
+
+   public String getName() {
+      return "Synthetica Dark Look and Feel";
+   }
+}
