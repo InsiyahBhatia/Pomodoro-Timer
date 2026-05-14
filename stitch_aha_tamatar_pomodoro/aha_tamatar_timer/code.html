@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aha Tamatar! - Timer Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tomato-bounce {
+            filter: drop-shadow(0 10px 15px rgba(177, 44, 22, 0.3));
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#b12c16",
+                        "inverse-surface": "#30312c",
+                        "on-surface": "#1b1c17",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "surface": "#fbf9f1",
+                        "on-surface-variant": "#5a413c",
+                        "on-primary-container": "#630900",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8f1100",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#b12c16",
+                        "on-secondary-fixed-variant": "#005306",
+                        "on-secondary-fixed": "#002201",
+                        "on-background": "#1b1c17",
+                        "surface-bright": "#fbf9f1",
+                        "surface-dim": "#dcdad2",
+                        "surface-container-highest": "#e4e3db",
+                        "on-primary": "#ffffff",
+                        "outline": "#8e706b",
+                        "outline-variant": "#e2bfb8",
+                        "inverse-primary": "#ffb4a5",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#69fd5d",
+                        "surface-container-low": "#f5f4ec",
+                        "tertiary-container": "#c9a900",
+                        "on-primary-fixed": "#3f0400",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdad3",
+                        "tertiary": "#705d00",
+                        "secondary": "#006e0a",
+                        "secondary-fixed": "#75ff68",
+                        "surface-variant": "#e4e3db",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eee6",
+                        "surface-container-high": "#eae8e0",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#00730b",
+                        "primary-container": "#ff6347",
+                        "secondary-fixed-dim": "#4ce346",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "background": "#fbf9f1",
+                        "inverse-on-surface": "#f3f1e9",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "margin-desktop": "auto",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-timer": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-timer": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface-dim w-full top-0 sticky bg-surface-container dark:bg-surface-container-high shadow-[0_4px_0_0_rgba(177,44,22,0.1)] z-40">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-[480px] mx-auto">
+<button class="text-primary hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-black">Aha Tamatar!</h1>
+<button class="text-primary hover:scale-105 transition-transform">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[480px] px-margin-mobile py-base flex flex-col items-center gap-lg">
+<!-- Song Title Section -->
+<div class="w-full flex justify-center mt-sm">
+<div class="bg-tertiary-container text-on-tertiary-container px-md py-xs rounded-full flex items-center gap-xs shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="music_note">music_note</span>
+<span class="font-label-md text-label-md tracking-wider">Aha Tamatar!</span>
+</div>
+</div>
+<!-- Tomato Character Container -->
+<div class="relative w-full flex justify-center items-center py-md">
+<!-- Growth Circle / Aura -->
+<div class="absolute w-64 h-64 bg-primary-container opacity-10 rounded-full blur-3xl"></div>
+<!-- The Growing Tomato -->
+<div class="relative z-10 w-56 h-56 flex flex-col items-center justify-center">
+<img alt="Happy Tomato Mascot" class="w-full h-full object-contain tomato-bounce scale-110" data-alt="A cheerful, 3D rendered cartoon tomato character with a big friendly smile and large expressive eyes. The tomato is bright red with a vibrant green leafy stem at the top. The lighting is soft and studio-quality, casting a gentle red glow against a light cream background, creating a playful and nurturing atmosphere suitable for children." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGE9aTJxjT5Eq952nukib621bjP4ujCcOChesv4zF9uS-BS-oBdwk9uqbgT0Cyi7iNQTiSrYILx7S2UGmijgqxGyjQMSEmNSWhtS6XD2c0RVSL_Zd0czAMbNuE-05pBuLW4lHVSjFr7HI7tYY3XUSLzvUMx_vFfFnD17YBuQmgtBVCZASQPH4Uuw4jVobM297IbrTpnOXd28Q9-BLkJ6STYD_xWuO87Pzmq_5XrpNt7Z0Zy_830iXjLKFpsBSjuXolv_Q7Kk7mMjIp"/>
+<!-- Countdown Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="font-display-timer text-display-timer text-white drop-shadow-md">25:00</span>
+</div>
+</div>
+</div>
+<!-- Task Info Chip -->
+<div class="bg-tertiary-fixed text-on-tertiary-fixed px-lg py-sm rounded-xl shadow-[0_4px_0_0_#e9c400] flex items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-headline-md text-headline-md">Homework Time</span>
+</div>
+<!-- Action Buttons (Vegetable Themed Icons) -->
+<div class="w-full grid grid-cols-3 gap-md px-base">
+<!-- Reset Button (Onion?) -->
+<button class="flex flex-col items-center gap-xs hover:scale-105 active:scale-95 transition-all">
+<div class="w-16 h-16 bg-surface-container-highest rounded-full flex items-center justify-center shadow-[0_6px_0_0_#dcdad2] border-2 border-white">
+<span class="material-symbols-outlined text-on-surface-variant text-[32px]" data-icon="restart_alt">restart_alt</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Reset</span>
+</button>
+<!-- Play/Pause Button (Primary Tomato) -->
+<button class="flex flex-col items-center gap-xs hover:scale-110 active:scale-95 transition-all -translate-y-2">
+<div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-[0_8px_0_0_#8f1100] border-4 border-primary-fixed">
+<span class="material-symbols-outlined text-white text-[48px]" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold">Start</span>
+</button>
+<!-- Skip Button (Carrot?) -->
+<button class="flex flex-col items-center gap-xs hover:scale-105 active:scale-95 transition-all">
+<div class="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center shadow-[0_6px_0_0_#00730b] border-2 border-white">
+<span class="material-symbols-outlined text-on-secondary-container text-[32px]" data-icon="skip_next" style="font-variation-settings: 'FILL' 1;">skip_next</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Break</span>
+</button>
+</div>
+<!-- Progress Vine -->
+<div class="w-full flex flex-col gap-xs mt-auto mb-xl">
+<div class="flex justify-between items-end px-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Session 1/4</span>
+<span class="material-symbols-outlined text-secondary" data-icon="nature">nature</span>
+</div>
+<div class="relative w-full h-4 bg-surface-container-highest rounded-full overflow-hidden">
+<!-- Progress Fill with Leaf details -->
+<div class="absolute top-0 left-0 h-full w-[40%] bg-secondary rounded-full flex items-center justify-end px-1">
+<div class="w-2 h-2 bg-secondary-fixed rounded-full"></div>
+</div>
+<!-- Vine texture overlay -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 10px 50%, #ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+</div>
+<p class="text-center font-label-md text-label-md text-on-surface-variant opacity-60 italic">Growing strong like a healthy vine!</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full rounded-t-lg z-50 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_12px_rgba(0,0,0,0.05)] shadow-lg">
+<div class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 max-w-[480px] left-1/2 -translate-x-1/2">
+<!-- Timer Active -->
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 animate-bounce-short">
+<span class="material-symbols-outlined" data-icon="timer" style="font-variation-settings: 'FILL' 1;">timer</span>
+<span class="font-label-md text-label-md">Timer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 Active: scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="Park">Park</span>
+<span class="font-label-md text-label-md">Garden</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 Active: scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+<span class="font-label-md text-label-md">Rhyme</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 Active: scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</div>
+</div>
+</nav>
+</body></html>

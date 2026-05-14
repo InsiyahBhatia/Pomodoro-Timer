@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aha Tamatar! - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#b12c16",
+                        "inverse-surface": "#30312c",
+                        "on-surface": "#1b1c17",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4a5",
+                        "surface": "#fbf9f1",
+                        "on-surface-variant": "#5a413c",
+                        "on-primary-container": "#630900",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-primary-fixed-variant": "#8f1100",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-tint": "#b12c16",
+                        "on-secondary-fixed-variant": "#005306",
+                        "on-secondary-fixed": "#002201",
+                        "on-background": "#1b1c17",
+                        "surface-bright": "#fbf9f1",
+                        "surface-dim": "#dcdad2",
+                        "surface-container-highest": "#e4e3db",
+                        "on-primary": "#ffffff",
+                        "outline": "#8e706b",
+                        "outline-variant": "#e2bfb8",
+                        "inverse-primary": "#ffb4a5",
+                        "on-tertiary-container": "#4c3f00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#69fd5d",
+                        "surface-container-low": "#f5f4ec",
+                        "tertiary-container": "#c9a900",
+                        "on-primary-fixed": "#3f0400",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdad3",
+                        "tertiary": "#705d00",
+                        "secondary": "#006e0a",
+                        "secondary-fixed": "#75ff68",
+                        "surface-variant": "#e4e3db",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#f0eee6",
+                        "surface-container-high": "#eae8e0",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#00730b",
+                        "primary-container": "#ff6347",
+                        "secondary-fixed-dim": "#4ce346",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "background": "#fbf9f1",
+                        "inverse-on-surface": "#f3f1e9",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "margin-desktop": "auto",
+                        "md": "24px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-timer": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-timer": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        .lip-primary { box-shadow: 0 4px 0 0 #8f1100; }
+        .lip-secondary { box-shadow: 0 4px 0 0 #005306; }
+        .lip-tertiary { box-shadow: 0 4px 0 0 #c9a900; }
+        .active-press:active { transform: scale(0.98); box-shadow: 0 1px 0 0 transparent; }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            background: #b12c16;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-surface-dim shadow-[0_4px_0_0_rgba(177,44,22,0.1)] z-50">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-[480px] mx-auto">
+<button class="hover:scale-105 transition-transform active:scale-95 text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-black">Aha Tamatar!</h1>
+<button class="hover:scale-105 transition-transform active:scale-95 text-primary">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-[480px] px-margin-mobile pt-base pb-32">
+<div class="space-y-lg mt-sm">
+<!-- Focus Timer Slider -->
+<section class="bg-surface-container-low rounded-lg p-md shadow-sm border-b-4 border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="bg-primary p-2 rounded-full text-on-primary">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<h2 class="font-headline-md text-headline-md">Focus Time</h2>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<span class="font-display-timer text-display-timer text-primary">25</span>
+<span class="font-label-md text-label-md text-on-surface-variant pb-2 uppercase tracking-widest">Minutes</span>
+</div>
+<input class="w-full h-4 bg-surface-variant rounded-full appearance-none cursor-pointer" max="60" min="5" type="range" value="25"/>
+<div class="flex justify-between text-on-surface-variant font-label-md">
+<span>Short &amp; Sweet</span>
+<span>Long Focus</span>
+</div>
+</div>
+</section>
+<!-- Break Timer Slider -->
+<section class="bg-surface-container-low rounded-lg p-md shadow-sm border-b-4 border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="bg-secondary p-2 rounded-full text-on-secondary">
+<span class="material-symbols-outlined" data-icon="Park">Park</span>
+</div>
+<h2 class="font-headline-md text-headline-md">Break Time</h2>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<span class="font-display-timer text-display-timer text-secondary">05</span>
+<span class="font-label-md text-label-md text-on-surface-variant pb-2 uppercase tracking-widest">Minutes</span>
+</div>
+<input class="w-full h-4 bg-surface-variant rounded-full appearance-none cursor-pointer" max="20" min="1" type="range" value="5"/>
+<div class="flex justify-between text-on-surface-variant font-label-md">
+<span>Quick Rest</span>
+<span>Big Play</span>
+</div>
+</div>
+</section>
+<!-- Rhyme Toggle Card -->
+<section class="bg-surface-container-low rounded-lg p-md shadow-sm border-b-4 border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="bg-tertiary p-2 rounded-full text-on-tertiary">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md">Play Rhymes</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Songs during breaks!</p>
+</div>
+</div>
+<!-- Custom Squishy Toggle -->
+<button class="w-16 h-10 bg-secondary-container rounded-full relative p-1 lip-secondary transition-all active:scale-95 overflow-hidden">
+<div class="w-8 h-8 bg-on-secondary rounded-full flex items-center justify-center translate-x-6">
+<span class="material-symbols-outlined text-secondary scale-75" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</button>
+</section>
+<!-- Mascot Selection -->
+<section class="bg-surface-container-low rounded-lg p-md shadow-sm border-b-4 border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="bg-primary-container p-2 rounded-full text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="stars">stars</span>
+</div>
+<h2 class="font-headline-md text-headline-md">Your Tomato Skin</h2>
+</div>
+<!-- Bento-like skin grid -->
+<div class="grid grid-cols-2 gap-sm">
+<button class="p-base bg-surface rounded-lg border-2 border-primary lip-primary flex flex-col items-center gap-xs active-press">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center overflow-hidden">
+<img alt="Classic Tomato" class="w-16 h-16" data-alt="A cheerful, bright red cartoon tomato mascot with big expressive eyes and a friendly smile, styled in a tactile 3D rubber aesthetic. The mascot has tiny green leaf arms and is set against a clean, soft cream background that emphasizes its vibrant red and green colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBySNM4Q3fiaGD-FG7WWmuwC20gebhVACRkzU9jX4uOHXvbtkJM_JnMfNPjTFFZ6_Y73OYk7eUarxPbxHaTwTZJmVIWuXRvZS4SDhNTxRXm_3aVcACpGtFwqO2Mh1v8LFDXK3oN0e-1jICc5eb2iEtyxCOE5qVUqvHoHYARoHUtBnrVyPzmc9aTrTaCFE6wo1-HviEJ6aGZktHEt6vccUYDGvh3RHhwt5io7TbzSisOIGDnZvdvpJOYmM4Lh5ohYh9d2Cbrg737ryp"/>
+</div>
+<span class="font-label-md text-label-md text-primary">Classic Red</span>
+</button>
+<button class="p-base bg-surface rounded-lg border-2 border-transparent hover:border-outline-variant flex flex-col items-center gap-xs active-press">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center overflow-hidden grayscale opacity-60">
+<img alt="Golden Tomato" class="w-16 h-16" data-alt="A luxurious golden tomato mascot with a metallic, reflective sheen, featuring cute cartoon eyes and a tiny crown on its stem. The visual style is playful yet premium, using a warm sunny yellow and metallic gold palette to create a sense of high achievement and reward for the young user." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaSc4YRaLOFT0OgGfxh1Gp5JrO0n6NPqYiY8sLjqSe0-aLKPROqI15Yyj1yxCcG6lWkIO45OrA_ErnwwqbiUryFcz1C95Rz6ffGlYbmKxI5gxaRuapEPmnlsIeq5ikyo8-MtO86xU2i1-SP5K6ZFoiTIccXKQZUDD8zUw_GRC5boBgC92e421ColYoSog3SmvpDue4WXYvVIGvrvqa3L0cxIJQYenXwheR01oE94yWefwhhaXU9ewlGsJyWLeGi7UMfEtTTHZ3AAkB"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Super Gold</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="lock">lock</span>
+</button>
+<button class="p-base bg-surface rounded-lg border-2 border-transparent hover:border-outline-variant flex flex-col items-center gap-xs active-press">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center overflow-hidden grayscale opacity-60">
+<img alt="Ninja Tomato" class="w-16 h-16" data-alt="A cool ninja tomato character wearing a tiny black eye mask and a green leaf headband, looking determined and ready for focus work. The design is rendered in a soft-touch toy style with high-contrast primary colors, capturing a fun and adventurous mood for students." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn3aotIkFQ_qVPEnRtlBJBmho6mEd8hl3bBcXKqhXhOZBMQzeCDxctYRQr41_7bhyUjMmr_PwYecEkB0jS4jTUsuEq4LJ2K-D6OgTqIAxuaAMd9AuR08nAfN2qu_M0T0wYwZxYlbib9hFbg4k38SEsYCavtt4DwCtUAuUbVWXBDggU1WPSqQ1IOCJ6a1orsEc1hmJnn2r8eYvfiEmO90nq0nMGu8Q3U-BHqSNd8RE-UqmCRkBHGFMh55ANRYnf-gO5WbStncEFeB4K"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Ninja Focus</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="lock">lock</span>
+</button>
+<button class="p-base bg-surface rounded-lg border-2 border-transparent hover:border-outline-variant flex flex-col items-center gap-xs active-press">
+<div class="w-20 h-20 bg-surface-container-high rounded-full flex items-center justify-center overflow-hidden grayscale opacity-60">
+<img alt="Space Tomato" class="w-16 h-16" data-alt="An adorable astronaut tomato mascot inside a tiny clear space helmet, floating playfully. The aesthetic combines vibrant tomato red with soft silver and cosmic blue accents, maintaining the bouncy and nurturing brand identity while introducing a theme of exploration and wonder." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUsuF3lS4k5n7llkn9RimWaT2tmkh9g_z9A8KG-vhXAi7MNWRWF4ggdJTCvXixtpfROa85WM7HcPejVEzR78JAdmqAbEGVjD2y7mNfiMj6CAWMCepWw5dtudtlXA_KVc41-_qkIvQeSYz1Bqkz8H-RdBWcKdA2JgjSpRZZo2KYwCqMn51hL_bkRkUFhnubIwT2DprnfOp6CEpV4AWlCW5i4qmOrzBxyYpMCw2wuhqn6LEHS277g2AH--as1Mnc7F6BdWBCYiYlt2dC"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Space Scout</span>
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="lock">lock</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 max-w-[480px] left-1/2 -translate-x-1/2 bg-surface-container dark:bg-surface-container-highest shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-lg z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+<span class="font-label-md text-label-md">Timer</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="Park">Park</span>
+<span class="font-label-md text-label-md">Garden</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="music_note">music_note</span>
+<span class="font-label-md text-label-md">Rhyme</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 animate-bounce-short active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</button>
+</nav>
+<!-- FAB Suppression: On Settings screen, FAB is suppressed as per guidelines -->
+</body></html>
