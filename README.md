@@ -3,8 +3,6 @@
 
 Aha Tamatar is a professional-grade Pomodoro application built with **Java Swing**, designed to turn focus into a harvest. Featuring a classic "Aha" aesthetic, AI-powered productivity coaching, and a persistent garden ecosystem.
 
-![Aha Tamatar Banner](screen.png)
-
 ##  Key Features
 - **Classic Aesthetic**: A high-contrast, clean UI with a professional "Aha" color palette and Arial typography.
 - **AI Chat Garden**: A dedicated tab to talk to your **AI Coach** (powered by Google Gemini 2.5/3.1). Get pun-filled productivity tips and task breakdowns.
